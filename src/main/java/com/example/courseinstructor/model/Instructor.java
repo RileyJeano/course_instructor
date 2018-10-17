@@ -1,8 +1,13 @@
 package com.example.courseinstructor.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Instructor {
@@ -11,6 +16,10 @@ public class Instructor {
 	private Long id;
 	private String firstName;
 	private String lastName;
+
+//	@OneToMany(mappedBy = "instructor")
+//	@JoinColumn(name = "courseTopic_id")
+//	private Set<CourseTopic> courses = new HashSet<CourseTopic>();
 
 	public Instructor() {
 	}

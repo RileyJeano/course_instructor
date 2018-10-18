@@ -1,12 +1,10 @@
 package com.example.courseinstructor.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -17,9 +15,8 @@ public class Instructor {
 	private String firstName;
 	private String lastName;
 
-//	@OneToMany(mappedBy = "instructor")
-//	@JoinColumn(name = "courseTopic_id")
-//	private Set<CourseTopic> courses = new HashSet<CourseTopic>();
+	@OneToMany(mappedBy = "instructor")
+	private Collection<CourseTopic> courseTopic;
 
 	public Instructor() {
 	}
@@ -41,4 +38,9 @@ public class Instructor {
 	public String getLastName() {
 		return lastName;
 	}
+
+	public Collection<CourseTopic> getCourseTopic() {
+		return courseTopic;
+	}
+
 }

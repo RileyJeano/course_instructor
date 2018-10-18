@@ -21,14 +21,31 @@ public class CourseTopicPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		courseRepo.save(new CourseTopic("Spring"));
-		courseRepo.save(new CourseTopic("HTML"));
-		courseRepo.save(new CourseTopic("Java"));
-		courseRepo.save(new CourseTopic("JavaScript"));
-		instructorRepo.save(new Instructor("Brian", "Forsythe"));
-		instructorRepo.save(new Instructor("Don", "Hamilton"));
-		instructorRepo.save(new Instructor("Alan", "Kostrick"));
+		Instructor instructor1 = new Instructor("Charles", "Xavier");
+		Instructor instructor2 = new Instructor("Tony", "Stark");
+		Instructor instructor3 = new Instructor("Steve", "Rogers");
+		Instructor instructor4 = new Instructor("Reed", "Richards");
+		Instructor instructor5 = new Instructor("Bruce", "Banner");
 
+		instructor1 = instructorRepo.save(instructor1);
+		instructor2 = instructorRepo.save(instructor2);
+		instructor3 = instructorRepo.save(instructor3);
+		instructor4 = instructorRepo.save(instructor4);
+		instructor5 = instructorRepo.save(instructor5);
+
+		CourseTopic course1 = new CourseTopic("Controlling Your Power", instructor1);
+		CourseTopic course2 = new CourseTopic("Hand To Hand Combat", instructor3);
+		CourseTopic course3 = new CourseTopic("Weapon Creation", instructor2);
+		CourseTopic course4 = new CourseTopic("Interdimensional Travel 101", instructor4);
+		CourseTopic course5 = new CourseTopic("Governmental Contracts: What Not To Do", instructor5);
+		CourseTopic course6 = new CourseTopic("I am Steve Rogers: Intergalactic Politics", instructor3);
+
+		courseRepo.save(course1);
+		courseRepo.save(course2);
+		courseRepo.save(course3);
+		courseRepo.save(course4);
+		courseRepo.save(course5);
+		courseRepo.save(course6);
 	}
 
 }
